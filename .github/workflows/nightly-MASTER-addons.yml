@@ -18,16 +18,16 @@ on:
           - ARMv8.arm
           - Generic.x86_64
           - Generic-legacy.x86_64
-  schedule:
-    # The times are specified in UTC
-    - cron: "15 3 * * *"
+#  schedule:
+#    # The times are specified in UTC
+#    - cron: "15 3 * * *"
  
 env:
   # these ENV variables are not used yet - need to get this working with the with statements below
   clean_le: no_clean_le
   debug: debug
-  ephemeral: ephemeral
-  upload: upload
+  ephemeral: no_ephemeral
+  upload: no_upload
 
 jobs:
   check_date:
@@ -62,12 +62,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'ARMv7.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/create-addon.yml@main
+    uses: heitbaum/actions/.github/workflows/create-addon.yml@main
     with:
       clean_le: no_clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "scripts/create_addon ${{ github.event.inputs.buildcmd_target || 'all' }} -audiodecoder.fluidsynth"
       gitref: master
       group: ARMv7_arm
@@ -87,12 +87,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'ARMv8.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/create-addon.yml@main
+    uses: heitbaum/actions/.github/workflows/create-addon.yml@main
     with:
       clean_le: no_clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "scripts/create_addon ${{ github.event.inputs.buildcmd_target || 'all' }} -audiodecoder.fluidsynth"
       gitref: master
       group: ARMv8_arm
@@ -112,12 +112,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'Generic.x86_64' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/create-addon.yml@main
+    uses: heitbaum/actions/.github/workflows/create-addon.yml@main
     with:
       clean_le: no_clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "scripts/create_addon ${{ github.event.inputs.buildcmd_target || 'all' }} -chrome -audiodecoder.fluidsynth -visualization.pictureit"
       gitref: master
       group: Generic_x86_64
@@ -138,12 +138,12 @@ jobs:
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'Generic-legacy.x86_64' || github.event_name == 'schedule' )
         && ( github.event.inputs.buildcmd_target == 'all' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/create-addon.yml@main
+    uses: heitbaum/actions/.github/workflows/create-addon.yml@main
     with:
       clean_le: no_clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "scripts/create_addon chrome"
       gitref: master
       group: Generic-legacy_x86_64

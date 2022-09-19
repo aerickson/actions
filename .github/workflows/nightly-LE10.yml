@@ -32,16 +32,16 @@ on:
           - RK3399.arm
           - RPi2.arm
           - RPi4.arm
-  schedule:
-    # The times are specified in UTC
-    - cron: "30 7 * * *"
+#  schedule:
+#    # The times are specified in UTC
+#    - cron: "30 7 * * *"
 
 env:
   # these ENV variables are not used yet - need to get this working with the with statements below
-  clean_le: no_clean_le
+  clean_le: clean_le
   debug: debug
-  ephemeral: ephemeral
-  upload: upload
+  ephemeral: no_ephemeral
+  upload: no_upload
 
 jobs:
   check_date:
@@ -76,12 +76,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'A64.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: A64_arm-10_0
@@ -101,12 +101,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H3.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: H3_arm-10_0
@@ -126,12 +126,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H5.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: H5_arm-10_0
@@ -151,12 +151,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H6.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: H6_arm-10_0
@@ -178,12 +178,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'Generic.x86_64' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: Generic_x86_64-10_0
@@ -207,12 +207,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3288.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: RK3288_arm-10_0
@@ -232,12 +232,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3328.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: RK3328_arm-10_0
@@ -257,12 +257,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3399.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: RK3399_arm-10_0
@@ -284,12 +284,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RPi2.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: RPi2_arm-10_0
@@ -309,12 +309,12 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RPi4.arm' || github.event_name == 'schedule' )
-    uses: LibreELEC/actions/.github/workflows/make-image.yml@main
+    uses: heitbaum/actions/.github/workflows/make-image.yml@main
     with:
-      clean_le: no_clean_le
+      clean_le: clean_le
       debug: debug
-      ephemeral: ephemeral
-      upload: upload
+      ephemeral: no_ephemeral
+      upload: no_upload
       buildcmd: "make image"
       gitref: ${{ github.event.inputs.gitref_to_build || 'libreelec-10.0' }}
       group: RPi4_arm-10_0
