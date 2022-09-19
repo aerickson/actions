@@ -76,7 +76,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'A64.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -101,7 +101,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H3.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -126,7 +126,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H5.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -151,7 +151,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'H6.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -178,7 +178,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'Generic.x86_64' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -207,7 +207,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3288.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -232,7 +232,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3328.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -257,7 +257,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RK3399.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -284,7 +284,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RPi2.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
@@ -309,7 +309,7 @@ jobs:
     if: |
       ( needs.check_date.outputs.should_run != 'false' )
         && ( github.event.inputs.target == 'all' || github.event.inputs.target == 'RPi4.arm' || github.event_name == 'schedule' )
-    uses: heitbaum/actions/.github/workflows/make-image.yml@main
+    uses: aerickson/actions/.github/workflows/make-image.yml@main
     with:
       clean_le: clean_le
       debug: debug
